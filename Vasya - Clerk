@@ -1,0 +1,22 @@
+#https://www.codewars.com/kata/555615a77ebc7c2c8a0000b8
+
+def tickets(people):
+    t1 = t2 = t3 = 0
+    
+    for m in people:
+        if m == 25:
+            t1 += 1
+        if m == 50:
+            t2 += 1
+            t1 -= 1
+        if m == 100:
+            if t2 == 0 and t1 > 2:
+                t1 -= 3
+            else:
+                t1 -= 1
+                t2 -= 1
+            
+        if t1 < 0 or t2 < 0:
+            return "NO"
+        
+    return "YES"
