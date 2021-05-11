@@ -1,0 +1,14 @@
+#https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9
+
+def up_array(arr):
+    #Handling empty list
+    if len(arr) < 1:
+        return None
+  
+    #Handling if a list contains number greater than 9 or less than 0
+    for i in arr:
+        if len(str(i)) > 1 or len(str(i)) < 0:
+            return None
+    
+    #Finally return the valid list
+    return [int(sts) for sts in str(int(''.join(str(ele) for ele in arr))+1)]
