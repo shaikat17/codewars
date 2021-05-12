@@ -1,0 +1,15 @@
+#https://www.codewars.com/kata/54a91a4883a7de5d7800009c
+
+def increment_string(strng):
+    fstring = strng.rstrip('1234567890')
+    
+    numbr = strng[len(fstring):]
+    
+    if len(numbr) < 1:
+        return strng + str(1)
+    else:
+        numln = len(numbr)
+        
+        new_value = str(int(numbr)+1)
+        
+        return fstring + new_value.zfill(numln)
